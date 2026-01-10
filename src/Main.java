@@ -1,10 +1,13 @@
 import multimedia.Audio;
 import multimedia.Image;
+import multimedia.Multimedia;
 import multimedia.Video;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 void main() {
+    Multimedia[] media = new Multimedia[5];
+
     Scanner sc = new Scanner(System.in);
     System.out.print("Choose your media: Audio, Video or Image?");
     switch (sc.nextLine()) {
@@ -16,6 +19,7 @@ void main() {
             System.out.println("Choose duration from 0 to 5:");
             int duration = sc.nextInt();
             Audio audio = new Audio(title, volume, duration);
+            media[0] = audio;
             System.out.println(audio.play());
         break;
         case "Video":

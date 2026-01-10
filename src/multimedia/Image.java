@@ -27,4 +27,7 @@ public class Image extends Multimedia implements Brightness {
         return BrightnessValue--;
     }
 
+    public String Show(){
+        return this.getTitle() + this.setBrightness();
+    }
 }

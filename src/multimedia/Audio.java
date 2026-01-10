@@ -20,7 +20,7 @@ public class Audio extends Multimedia implements Volume, Duration {
     }
 
     @Override
-    public String getDuration(){
+    public String play(){
         String DurationSign = this.getTitle() + this.getVolume();
         for(int i = 0; i < Duration; i++) {
             System.out.println(DurationSign);

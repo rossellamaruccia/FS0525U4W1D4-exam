@@ -22,7 +22,7 @@ public class Video extends Multimedia implements Volume, Brightness, Duration {
     }
 
     @Override
-    public String getDuration(){
+    public String play(){
         String DurationSign = this.getTitle() + this.getVolume() + this.setBrightness();
        for(int i = 0; i < Duration; i++) {
        System.out.println(DurationSign);

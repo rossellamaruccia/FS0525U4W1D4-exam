@@ -1,13 +1,34 @@
+import multimedia.Audio;
+import multimedia.Video;
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 void main() {
-    //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-    // to see how IntelliJ IDEA suggests fixing it.
-    IO.println(String.format("Hello and welcome!"));
-
-    for (int i = 1; i <= 5; i++) {
-        //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-        // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-        IO.println("i = " + i);
+    Scanner sc = new Scanner(System.in);
+    System.out.print("Choose your media: Audio, Video or Image?");
+    switch (sc.nextLine()) {
+        case "Audio":
+            System.out.println("Enter title:");
+            String title = sc.nextLine();
+            System.out.println("Choose volume from 0 to 10:");
+            int volume = sc.nextInt();
+            System.out.println("Choose duration from 0 to 5:");
+            int duration = sc.nextInt();
+            Audio audio = new Audio(title, volume, duration);
+            System.out.println(audio.getDuration());
+        break;
+        case "Video":
+            System.out.println("Enter title:");
+            String title2 = sc.nextLine();
+            System.out.println("Choose volume from 0 to 10:");
+            int volume2 = sc.nextInt();
+            System.out.println("Choose brightness from 0 to 5:");
+            int brightness = sc.nextInt();
+            System.out.println("Choose duration from 0 to 10:");
+            int duration2 = sc.nextInt();
+            Video video = new Video(title2, volume2, brightness, duration2);
+            System.out.println(video.getDuration());
+        break;
+        case "Image": ;
     }
 }

@@ -3,10 +3,10 @@ import multimedia.Image;
 import multimedia.Multimedia;
 import multimedia.Video;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 void main() {
     Multimedia[] media = new Multimedia[5];
+
+    for (int i = 0; i < media.length; i++) {
 
     Scanner sc = new Scanner(System.in);
     System.out.print("Choose your media: Audio, Video or Image?");
@@ -19,7 +19,7 @@ void main() {
             System.out.println("Choose duration from 0 to 5:");
             int duration = sc.nextInt();
             Audio audio = new Audio(title, volume, duration);
-            media[0] = audio;
+            media[i] = audio;
             System.out.println(audio.play());
         break;
         case "Video":
@@ -32,6 +32,7 @@ void main() {
             System.out.println("Choose duration from 0 to 10:");
             int duration2 = sc.nextInt();
             Video video = new Video(title2, volume2, brightness, duration2);
+            media[i] = video;
             System.out.println(video.play());
         break;
         case "Image":
@@ -41,20 +42,28 @@ void main() {
             int brightness2 = sc.nextInt();
 
             Image image = new Image(title3, brightness2);
+            media[i] = image;
             System.out.println(image.Show());
-            System.out.println("If you want to decrease or increase brightness, press < or >; otherwise, press anything else");
-            String choice = sc.nextLine();
-            switch (choice) {
-                case "<":image.decreaseBrightness();
-                    System.out.println(image.Show());
-                    break;
-                case ">": image.increaseBrightness();
-                    System.out.println(image.Show());
-                    break;
-                default: break;
-            }
             break;
             default:
                 System.out.println("Invalid input");
+    }
+    }
+
+
+    for (int i = 0; i < media.length; i++) {
+        switch (media[i].toString().charAt(11)) {
+            case 'V' :
+                System.out.println(((Video) media[i]).play());
+                break;
+            case 'A' :
+                System.out.println(((Audio) media[i]).play());
+                break;
+            case 'I' :
+                System.out.println(((Image) media[i]).Show());
+                break;
+                default:
+                    System.out.println("Invalid input");
+        }
     }
 }

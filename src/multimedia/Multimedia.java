@@ -1,6 +1,6 @@
 package multimedia;
 
-public abstract class Multimedia {
+public class Multimedia {
     private String title;
 
     public Multimedia(String title)
